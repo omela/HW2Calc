@@ -3,11 +3,11 @@ package epam.oksanaomelyanchuk;
 import java.io.IOException;
 
 public class ConsoleInteraction {
-private static Boolean b=true; //flag that indicates if User will continue work or willing to leave after calculation is done
+static Boolean b=true; //flag that indicates if User will continue work or willing to leave after calculation is done
         public static void ui() throws IOException
         {
         InputReader input = new InputReader();
-while(b)
+while(b==true)
 {
     System.out.println("please enter a value within range ( -20 to 20)");
         input.scanning();

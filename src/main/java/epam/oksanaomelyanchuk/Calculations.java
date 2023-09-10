@@ -9,15 +9,21 @@ public class Calculations {
     public void math(float number, Operator operator)
     {
         if(operator==Operator.SQUAREROOT)
+
         {
+            if (number<0)
+            {
+                System.out.println("can not perfotm this operation, please enter number greater than 0 ");
+            }else{
            result= (float) Math.sqrt(number);
             System.out.println("total = "+ result);
+                resultWriter.printToFile(number,operator.name(),result);}
         }else if ((operator==Operator.TOTHESECONDPOWER))
         {
             result=number*number;
             System.out.println("total = "+ result);
+            resultWriter.printToFile(number,operator.name(),result);
         }
-        resultWriter.printToFile(number,operator.name(),result);
     }
     public void math(float number, Operator operator, float secondNumber)
     {

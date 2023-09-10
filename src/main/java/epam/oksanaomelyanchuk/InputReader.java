@@ -18,24 +18,22 @@ public class InputReader {
    private float operandValue;
   private  float number;
   private Operator operator;
-     public void scanning()
-     {
-         Scanner sc = new Scanner(System.in);
-        if(sc.hasNextFloat())
+     public Boolean scanning()
+     {Scanner sc = new Scanner(System.in);
+        if(sc.hasNextFloat()==true)
         {
          operandValue=sc.nextFloat();
-         if (operandValue <=20 && operandValue>= -20){
-         }
+         if (operandValue <=20 && operandValue>= -20){ return true;}
          else
          {
-             System.out.println("\n Please enter correct operand value");scanning();
+             System.out.println("\n Please enter correct operand value");scanning(); return false;
          }
-         } System.out.println("\n Please enter correct operand value");scanning();
+         } System.out.println("\n Please enter correct operand value");scanning(); return false;
      }
 public void scanningOperatorValue()
 { System.out.println("enter operation you want to perform: * , + , - , / , SQUAREROOT , TOTHESECONDPOWER");
     Scanner sc = new Scanner(System.in);
-    String operatorValue = sc.next();
+    String operatorValue = sc.next().toString();
     switch (operatorValue)
     {
         case "*": operator =  Operator.MULTY;
@@ -66,7 +64,7 @@ public void readOperatorOneMore()
     public Boolean scanYesNo()
     {
         Scanner sc1 = new Scanner(System.in);
-        String value = sc1.next();
+        String value = sc1.next().toString();
         switch (value)
         {
             case "YES":  return true;
